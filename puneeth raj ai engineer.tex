@@ -1,0 +1,82 @@
+%-------------------------------------------------------------------------------
+% AI ENGINEER VERSION -- one page. Projects and publication lead, because your
+% AI evidence lives there. Built only from fact-ledger-approved claims.
+%-------------------------------------------------------------------------------
+\documentclass[a4paper]{article}
+\usepackage{resume-style}
+\hypersetup{pdftitle={Puneeth Raj - Resume (AI Engineer)}}
+
+\begin{document}
+
+\resumeHeader{Applied AI \& NLP \ $|$ \ PyTorch \ $|$ \ Hugging Face Transformers \ $|$ \ Gemini API \ $|$ \ Python}
+
+\section{Summary}
+\begin{resumeBlock}
+B.Tech graduate in AI \& Data Science who built and published MediSense, a disease-prediction system in which a fine-tuned RoBERTa model reached 95.1\% accuracy against five other models. Hands-on with PyTorch, Hugging Face Transformers, the Gemini API, Keras, and OpenCV. Currently a Technical Support Analyst at Tech Mahindra.
+\end{resumeBlock}
+\vspace{-14pt}
+
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+        {\href{https://github.com/ep0chzero/Disease-Prediction-and-Drug-Recommendation-Prototype}{\textbf{MediSense --- Disease Prediction \& Drug Recommendation}} $|$ \emph{PyTorch, Hugging Face, scikit-learn, spaCy, Gemini API}}{2024 -- 2025}
+      \resumeItemListStart
+        \resumeItem{Compared six models for disease prediction from textual symptom descriptions; a fine-tuned \textbf{RoBERTa} model reached \textbf{95.1\% accuracy} with \textbf{0.943 precision, 0.937 recall, and 0.940 F1} on a held-out test set, ahead of ModernBERT (93.3\%), BERT (91.6\%), BiLSTM (87.9\%), Naive Bayes (84.7\%), and Passive Aggressive (81.2\%).}
+        \resumeItem{Merged three public datasets (a disease--symptom knowledge base, 215K UCI drug reviews, and drug side effects) and built an NLTK/spaCy text pipeline: HTML stripping, contraction expansion, stopword removal, and lemmatization.}
+        \resumeItem{Designed a drug-recommendation module that ranks highly rated drugs by review count, average rating, and helpful votes, and attaches side-effect data; shipped it in a web app with login, prediction history, and a chat interface for symptom input.}
+        \resumeItem{Evolved it from a Streamlit TF-IDF prototype to a version serving RoBERTa from Hugging Face with a Gemini API agent.}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\href{https://github.com/ep0chzero/realtime-emogenage}{\textbf{Real-Time Emotion, Age \& Gender Detection}} $|$ \emph{Python, OpenCV, Keras/TensorFlow, Flask}}{Aug -- Nov 2024}
+      \resumeItemListStart
+        \resumeItem{Built a real-time computer-vision app that detects faces with an OpenCV Haar cascade and runs three Keras CNNs on each face: 7-class emotion (48$\times$48 grayscale), gender, and age (200$\times$200 color).}
+        \resumeItem{Served live predictions through a Flask app that streams annotated webcam frames to the browser.}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\href{https://github.com/ep0chzero/figma-metadata-viewer/tree/ai-code-gen}{\textbf{Figma-to-React Code Generator}} $|$ \emph{Gemini API, React, TypeScript, Figma REST API} $|$ \href{https://figma-metadata-viewer.pages.dev}{\underline{Live}}}{Dec 2024 -- Aug 2025}
+      \resumeItemListStart
+        \resumeItem{Used the Gemini API to turn Figma designs --- full pages or individual components --- into React/TypeScript code with a live preview, on top of a React 19 app that reads design files through the Figma REST API.}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+\vspace{-4pt}
+
+\section{Publication}
+\begin{resumeBlock}
+\pubMediSense
+\end{resumeBlock}
+\vspace{-6pt}
+
+\section{Experience}
+  \resumeSubHeadingListStart
+    \jobTechMahindra
+      \resumeItemListStart
+        \resumeItem{Support Okta, Active Directory, Jamf Pro, Microsoft Intune, Workspace ONE UEM, and Citrix Cloud: account and MFA changes, device enrollment and app deployment, and Citrix troubleshooting within ticket response-time targets.}
+      \resumeItemListEnd
+    \jobGenpact
+      \resumeItemListStart
+        \resumeItem{Audited \textbf{700+ policy-enforcement decisions per day} and drove a \textbf{30\% improvement in team-wide decision accuracy} through structured QA feedback and coaching for a \textbf{20+ member} team.}
+        \resumeItem{Tracked accuracy trends and produced operational reports that surfaced policy deviations for cross-functional stakeholders.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-4pt}
+
+\section{Technical Skills}
+\begin{resumeBlock}
+\textbf{AI/ML}{: PyTorch, Hugging Face Transformers (BERT, RoBERTa, ModernBERT), BiLSTM, scikit-learn, Keras/TensorFlow, OpenCV, NLTK, spaCy, Gemini API} \\
+\textbf{Data \& Languages}{: Python, Pandas, NumPy, SQL, Plotly, TypeScript, JavaScript} \\
+\textbf{Apps \& Tools}{: Flask, Streamlit, React, REST APIs, Git, Git LFS, Linux, Cloudflare Pages}
+\end{resumeBlock}
+\vspace{-6pt}
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \eduGNIT
+  \resumeSubHeadingListEnd
+\vspace{-8pt}
+\begin{resumeBlock}
+\textbf{Coursework}{: Machine Learning, Deep Learning, Computer Vision, Data Mining, Statistics, Data Structures \& Algorithms}
+\end{resumeBlock}
+
+\end{document}

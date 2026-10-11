@@ -1,0 +1,87 @@
+%-------------------------------------------------------------------------------
+% LINUX ADMINISTRATOR VERSION -- one page. Built only from fact-ledger-approved
+% claims. No Linux server administration is on record yet; see README for the
+% gap and how to close it (e.g. RHCSA, a home lab).
+%-------------------------------------------------------------------------------
+\documentclass[a4paper]{article}
+\usepackage{resume-style}
+\hypersetup{pdftitle={Puneeth Raj - Resume (Linux Administrator)}}
+
+\begin{document}
+
+\resumeHeader{Systems Administration \ $|$ \ Linux \ $|$ \ Identity \& Endpoint Management \ $|$ \ Python \& Bash}
+
+\section{Summary}
+\begin{resumeBlock}
+Technical Support Analyst at Tech Mahindra (client: Salesforce), handling account, MFA, device, and virtual-app administration across Okta, Active Directory, Jamf Pro, Microsoft Intune, Workspace ONE, and Citrix Cloud. Daily Linux user on Arch-based CachyOS who files diagnostic bug reports upstream, with Python and Bash skills and a B.Tech in AI \& Data Science.
+\end{resumeBlock}
+\vspace{-14pt}
+
+\section{Experience}
+  \resumeSubHeadingListStart
+    \jobTechMahindra
+      \resumeItemListStart
+        \resumeItem{Create, update, and disable user accounts and reset MFA in Okta and Active Directory.}
+        \resumeItem{Manage devices in Jamf Pro, Intune, and Workspace ONE UEM: enrollment, remote wipes, and app and policy deployment.}
+        \resumeItem{Perform administrative tasks in the Okta and Citrix Cloud consoles, and troubleshoot Citrix login and app-launch issues.}
+        \resumeItem{Resolve end-user support tickets within response-time targets across identity, device, and virtual-app platforms.}
+      \resumeItemListEnd
+    \jobGenpact
+      \resumeItemListStart
+        \resumeItem{Audited \textbf{700+ policy-enforcement decisions per day} across SLA-driven queues, maintaining accuracy and compliance at high volume.}
+        \resumeItem{Defined quality benchmarks with operations and compliance teams, streamlining audit workflows and sustaining SLA performance.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-4pt}
+
+\section{Technical Skills}
+\begin{resumeBlock}
+\textbf{Linux \& Systems}{: Linux (Arch-based CachyOS, Ubuntu), Bash, Git, Git LFS} \\
+\textbf{Identity \& Access}{: Okta, Active Directory, MFA administration} \\
+\textbf{Endpoint \& Virtual Apps}{: Jamf Pro, Microsoft Intune, Workspace ONE UEM, Citrix Cloud} \\
+\textbf{Scripting \& Data}{: Python, Bash, SQL, MySQL, PostgreSQL} \\
+\textbf{Learning}{: Docker, AWS, GitHub Actions}
+\end{resumeBlock}
+\vspace{-6pt}
+
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+        {\href{https://github.com/ep0chzero/google_meet_automation}{\textbf{Google Meet Automation}} $|$ \emph{Python, Selenium, ChromeDriver, pytz}}{Jun -- Nov 2023}
+      \resumeItemListStart
+        \resumeItem{Automated the Google Meet join flow with Selenium: sign-in through a hidden password prompt, camera and microphone muted before joining, and a fallback from ``Join now'' to ``Ask to join''.}
+        \resumeItem{Scheduled timezone-aware join and exit (IST to UTC) with automatic browser shutdown; missing UI controls don't crash a run.}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\href{https://github.com/ep0chzero/realtime-emogenage}{\textbf{Real-Time Emotion, Age \& Gender Detection}} $|$ \emph{Python, Flask, OpenCV, Keras/TensorFlow}}{Aug -- Nov 2024}
+      \resumeItemListStart
+        \resumeItem{Built a Flask service that streams webcam video to the browser as JPEG frames with live face, emotion, gender, and age predictions; versioned the large model files with Git LFS.}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\href{https://github.com/ep0chzero/Disease-Prediction-and-Drug-Recommendation-Prototype}{\textbf{MediSense --- Disease Prediction \& Drug Recommendation}} $|$ \emph{Python, PyTorch, Hugging Face}}{2024 -- 2025}
+      \resumeItemListStart
+        \resumeItem{Built an NLP system in which a fine-tuned RoBERTa model reached \textbf{95.1\% accuracy}; published in IJNRD (May 2025).}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+\vspace{-4pt}
+
+\section{Linux \& Open Source}
+\begin{resumeBlock}
+\textbf{Daily Linux}{: run Arch-based CachyOS as primary OS and file diagnostic bug reports upstream (e.g., Hyprland dotfiles).} \\
+\textbf{RustDesk}{: proposed an option to purge persisted relay settings on reinstall, after finding that a rogue relay config survived uninstalling an unofficial build (Jul 2025).} \\
+\textbf{Google Developer Student Clubs}{: Cloud \& DevOps member (2021 -- 2025); attended hands-on GCP and Docker workshops.}
+\end{resumeBlock}
+\vspace{-6pt}
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \eduGNIT
+  \resumeSubHeadingListEnd
+\vspace{-8pt}
+\begin{resumeBlock}
+\textbf{Coursework}{: Computer Networks, Database Management Systems, Software Engineering, Data Structures \& Algorithms}
+\end{resumeBlock}
+
+\end{document}
