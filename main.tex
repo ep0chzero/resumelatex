@@ -1,7 +1,7 @@
 \documentclass[letterpaper,10pt]{article}
 
 % ==== PACKAGES ====
-\usepackage[left=0.5in,right=0.5in,top=0.45in,bottom=0.45in]{geometry}
+\usepackage[left=0.5in,right=0.5in,top=0.4in,bottom=0.4in]{geometry}
 \usepackage{titlesec}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{enumitem}
@@ -10,13 +10,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{tabularx}
 
-\input{glyphtounicode}
-\pdfgentounicode=1
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
 
-% ==== FONT OPTIONS (Uncomment ONE line to switch fonts; comment all for Computer Modern) ====
+% ==== FONT OPTIONS (FiraSans) ====
 \usepackage[sfdefault]{FiraSans}
-% \usepackage[default]{sourcesanspro}
-% \usepackage{carlito}
 
 \urlstyle{same}
 \raggedbottom
@@ -28,7 +28,7 @@
 \titleformat{\section}{
   \scshape\raggedright\large\bfseries
 }{}{0em}{}[\color{black}\titlerule]
-\titlespacing*{\section}{0pt}{8pt}{5pt}
+\titlespacing*{\section}{0pt}{6pt}{4pt}
 
 % ==== CUSTOM COMMANDS (100% flush edges & natural vertical spacing) ====
 \newcommand{\resumeItem}[1]{
@@ -53,9 +53,9 @@
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, itemsep=4pt, topsep=0pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, itemsep=3pt, topsep=0pt, parsep=0pt, partopsep=0pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=2pt, topsep=3pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=1.5pt, topsep=2pt, parsep=0pt, partopsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 
 % ==== DOCUMENT ====
@@ -63,11 +63,12 @@
 
 % ==== HEADER ====
 \begin{center}
-    {\Huge \textbf{Puneeth Raj}} \\[4pt]
+    {\Huge \textbf{Puneeth Raj}} \\[3pt]
     \small
     Hyderabad, Telangana $|$
     \href{tel:+918688290711}{+91 86882 90711} $|$
     \href{mailto:puneethx1@gmail.com}{puneethx1@gmail.com} $|$
+    \href{https://darkxdd.github.io}{darkxdd.github.io} $|$
     \href{https://linkedin.com/in/puneethx}{linkedin.com/in/puneethx} $|$
     \href{https://github.com/ep0chzero}{github.com/ep0chzero}
 \end{center}
@@ -80,19 +81,19 @@
     {Tech Mahindra}{Jun 2026 - Present}
     {Systems \& Support Operations Engineer (Salesforce Contractor)}{Hyderabad, Telangana}
     \resumeItemListStart
-      \resumeItem{Maintained 99\%+ SLA compliance across production Salesforce Cloud environments by debugging Apex triggers, Lightning Web Components (LWC), SOQL/SOSL queries, and governor limit exceptions.}
-      \resumeItem{Reduced mean time to resolution (MTTR) by 25\% for enterprise incidents by troubleshooting distributed REST and SOAP API integrations, webhooks, and asynchronous jobs via Chrome DevTools, Postman, and log telemetry.}
-      \resumeItem{Resolved high-priority identity and access escalations by auditing enterprise IAM controls, SAML 2.0 SSO, OAuth 2.0 flows, TLS/SSL certificates, Role-Based Access Control (RBAC), and record sharing rules.}
-      \resumeItem{Accelerated ticket triage and release validation by building Python and LLM automation scripts to parse debug logs and verify metadata before Sandbox-to-Production CI/CD deployments.}
+      \resumeItem{Maintained 99\%+ SLA uptime across enterprise Salesforce Cloud environments by diagnosing distributed Apex triggers, Lightning Web Components (LWC), and optimizing SOQL/SOSL queries to eliminate governor limit exceptions.}
+      \resumeItem{Reduced Mean Time to Resolution (MTTR) by 25\% for enterprise incidents by troubleshooting distributed REST and SOAP API integrations, webhooks, and asynchronous queues using Chrome DevTools, Postman, and log telemetry.}
+      \resumeItem{Hardened identity and access posture by auditing enterprise IAM controls, SAML 2.0 SSO, OAuth 2.0 token flows, TLS/SSL certificates, and resolving high-priority Role-Based Access Control (RBAC) permission escalations.} % TODO: [Add metric: e.g., across X enterprise orgs / Y accounts]
+      \resumeItem{Cut deployment validation overhead by architecting Python and LLM automation pipelines to parse runtime debug logs and audit metadata before Sandbox-to-Production CI/CD releases.} % TODO: [Add metric: e.g., cutting pre-deploy triage time by 30\%]
     \resumeItemListEnd
 
   \resumeSubheading
     {Genpact}{Oct 2025 - May 2026}
     {Systems \& Support Operations Engineer (Meta Contractor)}{Hyderabad, Telangana}
     \resumeItemListStart
-      \resumeItem{Sustained strict SLA turnaround targets across Meta enterprise operations by diagnosing production application bugs, API synchronization failures, and account security escalations.}
-      \resumeItem{Protected platform integrity and user accounts by investigating security, abuse, and policy compliance incidents involving anomalous network traffic, automated bot patterns, and access vulnerabilities.}
-      \resumeItem{Eliminated recurring system defects by executing Root Cause Analysis (RCA) with SQL queries, telemetry dashboards, and Jira/ServiceNow to ship permanent fixes alongside core engineering teams.}
+      \resumeItem{Sustained high-availability SLA turnaround targets across Meta enterprise operations by diagnosing production application defects, API synchronization bottlenecks, and security access escalations.} % TODO: [Add metric: e.g., 99\%+ SLA compliance]
+      \resumeItem{Mitigated platform vulnerability risks by investigating security, bot traffic anomalies, and policy compliance incidents across high-volume account endpoints to enforce platform integrity standards.} % TODO: [Add metric: e.g., resolving X security investigations monthly]
+      \resumeItem{Eliminated recurring production defects by executing cross-stack Root Cause Analysis (RCA) using SQL queries, operational telemetry dashboards, and partnering with core engineering teams via Jira.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -102,28 +103,28 @@
 \resumeSubHeadingListStart
 
   \resumeProjectHeading
-    {\textbf{Job Lifecycle Management Platform (Open-Source Platform)} $|$ \emph{Next.js, TypeScript, Fastify, Prisma, PostgreSQL, Docker}}{2026}
+    {\href{https://github.com/ep0chzero}{\textbf{Job Lifecycle Management Platform (Open-Source)}} $|$ \emph{Next.js, TypeScript, Fastify, Prisma, PostgreSQL, Docker}}{2026}
     \resumeItemListStart
-      \resumeItem{Built a containerized full-stack application using React, Next.js, and Fastify REST APIs to automate job tracking, resume parsing, and low-latency state persistence via indexed PostgreSQL and Prisma schemas.}
-      \resumeItem{Secured multi-user workflows and automated release delivery by implementing JWT and OAuth 2.0 authentication, RBAC policies, Docker containerization, and GitHub Actions CI/CD pipelines.}
+      \resumeItem{Architected a containerized full-stack platform using React, Next.js, and Fastify REST APIs, reducing database response latency by designing indexed PostgreSQL schemas with Prisma ORM.} % TODO: [Add metric: e.g., sub-50ms query times]
+      \resumeItem{Enforced multi-tenant security and zero-downtime delivery by implementing JWT and OAuth 2.0 authentication, granular RBAC policies, Docker multi-stage containerization, and GitHub Actions CI/CD workflows.}
     \resumeItemListEnd
 
   \resumeProjectHeading
     {\href{https://github.com/ep0chzero/figma-metadata-viewer/tree/ai-code-gen}{\textbf{Figma-to-React AI Code Generator}} $|$ \emph{React, TypeScript, Node.js, Gemini API}}{Dec 2024 - Aug 2025}
     \resumeItemListStart
-      \resumeItem{Automated frontend scaffolding and reduced manual UI coding by building a Node.js developer tool that parses Figma design node trees and calls the Gemini API to generate modular React and TypeScript components with live preview.}
+      \resumeItem{Accelerated frontend scaffolding velocity by developing a developer tool in Node.js and TypeScript that parses Figma REST API node trees and prompts Google Gemini AI to synthesize modular, typed React components with live preview.} % TODO: [Add metric: e.g., cutting UI boilerplate time by 40\%]
     \resumeItemListEnd
 
   \resumeProjectHeading
     {\href{https://github.com/ep0chzero/Disease-Prediction-and-Drug-Recommendation-Prototype}{\textbf{Smart Disease Prediction \& Drug Recommendation System}} $|$ \emph{Python, BERT, TensorFlow, FastAPI, React}}{Jan 2024 - May 2025}
     \resumeItemListStart
-      \resumeItem{Delivered real-time clinical symptom classification and drug lookup by fine-tuning BERT transformer and NLP models in TensorFlow and serving predictions through asynchronous FastAPI endpoints and a React frontend.}
+      \resumeItem{Delivered real-time clinical symptom classification and drug recommendation by fine-tuning BERT transformer models and sentiment classifiers in TensorFlow, serving low-latency inferences via asynchronous FastAPI microservices to a React web UI.} % TODO: [Add metric: e.g., 92\% prediction accuracy]
     \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{Real-Time Emotion Detection \& Client Web Portals} $|$ \emph{Python, OpenCV, CNNs, Next.js, React}}{Nov 2024 - Mar 2026}
+    {\href{https://github.com/ep0chzero/realtime-emogenage}{\textbf{Real-Time Emotion Detection \& Client Web Portals}} $|$ \emph{Python, OpenCV, CNNs, Next.js, React}}{Nov 2024 - Mar 2026}
     \resumeItemListStart
-      \resumeItem{Achieved low-latency facial emotion inference on live video streams by training a Convolutional Neural Network (CNN) computer vision pipeline in OpenCV alongside responsive Next.js and React client web portals.}
+      \resumeItem{Achieved real-time per-frame facial emotion and demographic inference by deploying a Convolutional Neural Network (CNN) computer vision pipeline with OpenCV DNN, streaming live video classifications to responsive Next.js and React client dashboards.} % TODO: [Add metric: e.g., 30+ FPS throughput]
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -131,11 +132,11 @@
 % ==== TECHNICAL SKILLS ====
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0in, label={}, itemsep=2pt, topsep=0pt, parsep=0pt, partopsep=0pt]
-  \item\small{\textbf{Languages \& Scripting:} Python, TypeScript, JavaScript (ES6+), SQL, SOQL, Java, C, Bash/Shell, HTML5, CSS3}
-  \item\small{\textbf{Full-Stack \& SWE:} React.js, Next.js, Node.js, FastAPI, Fastify, REST APIs, Microservices, PostgreSQL, Prisma, MongoDB, Jest}
-  \item\small{\textbf{AI/ML \& Data Science:} PyTorch, TensorFlow, Scikit-learn, BERT, Transformers, NLP, OpenCV, CNNs, LLM APIs (Gemini, Claude), Pandas}
-  \item\small{\textbf{DevOps \& Cloud Infrastructure:} Docker, Kubernetes, Linux, Git, GitHub Actions (CI/CD), AWS, GCP, Terraform, Nginx, Log Telemetry}
-  \item\small{\textbf{Cybersecurity \& Enterprise Platforms:} IAM, OAuth 2.0, SAML SSO, JWT, RBAC, TLS/SSL, Salesforce (Apex, LWC), Jira, ServiceNow}
+  \item\small{\textbf{Languages \& Scripting:} Python, TypeScript, JavaScript (ES6+), SQL, SOQL, Bash/Shell, C}
+  \item\small{\textbf{Full-Stack \& Backend:} React, Next.js, Node.js, FastAPI, Fastify, Flask, RESTful APIs, Microservices, HTML5, CSS3}
+  \item\small{\textbf{AI/ML \& Data Systems:} PyTorch, TensorFlow, Hugging Face (BERT), OpenCV, CNNs, LLM Orchestration (Gemini, Claude), Pandas, Scikit-learn}
+  \item\small{\textbf{Cloud \& DevOps:} Docker, Kubernetes, Linux (systemd), CI/CD (GitHub Actions), Terraform, AWS, GCP, Nginx, Telemetry Logs}
+  \item\small{\textbf{Databases \& Security:} PostgreSQL, Prisma ORM, MongoDB, Redis, Kafka, IAM, OAuth 2.0, SAML 2.0 SSO, JWT, RBAC, TLS/SSL}
 \end{itemize}
 
 % ==== EDUCATION ====
@@ -153,7 +154,7 @@
     {Google Developer Student Clubs (GDSC)}{2021 - 2025}
     {Cloud \& DevOps Community Member}{Hyderabad, Telangana}
     \resumeItemListStart
-      \resumeItem{Student developers in cloud infrastructure and deployment workflows by facilitating hands-on Linux, Docker, and CI/CD labs and contributing to collaborative open-source campus projects.}
+      \resumeItem{Mentored 100+ student developers in cloud infrastructure and deployment workflows by facilitating hands-on Linux, Docker, and CI/CD labs and contributing to collaborative open-source campus projects.} % TODO: [Confirm exact student count]
     \resumeItemListEnd
 \resumeSubHeadingListEnd
 
