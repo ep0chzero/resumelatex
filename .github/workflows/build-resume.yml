@@ -1,0 +1,105 @@
+name: Build and Publish Resume
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'main.tex'
+      - '.github/workflows/build-resume.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Compile LaTeX & Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compile LaTeX Document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          args: "-pdf -interaction=nonstopmode -halt-on-error"
+
+      - name: Prepare Distribution Artifacts
+        run: |
+          mv main.pdf Puneeth_Raj_Resume.pdf
+          mkdir -p _site
+          cp Puneeth_Raj_Resume.pdf _site/
+          cat << 'EOF' > _site/index.html
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Puneeth Raj | Resume</title>
+            <meta http-equiv="refresh" content="0; url=Puneeth_Raj_Resume.pdf">
+            <style>
+              html, body, iframe { width: 100%; height: 100%; margin: 0; padding: 0; border: none; overflow: hidden; background: #0E0F11; }
+            </style>
+          </head>
+          <body>
+            <iframe src="Puneeth_Raj_Resume.pdf" type="application/pdf" title="Puneeth Raj Resume"></iframe>
+          </body>
+          </html>
+          EOF
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Force Update Rolling Git Tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -fa latest -m "Automated build from commit ${{ github.sha }}"
+          git push origin latest --force
+
+      - name: Publish Rolling GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: "Latest Resume Build"
+          body: |
+            Automated LaTeX compilation from commit `${{ github.sha }}` on `main`.
+
+            - **Direct Download:** [Puneeth_Raj_Resume.pdf](https://github.com/${{ github.repository }}/releases/latest/download/Puneeth_Raj_Resume.pdf)
+            - **Inline Web View (GitHub Pages):** [View PDF](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/Puneeth_Raj_Resume.pdf)
+          draft: false
+          prerelease: false
+          make_latest: true
+          files: Puneeth_Raj_Resume.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
